@@ -1,4 +1,4 @@
-# rest-easy-async
+# rest-easy-async [![Build Status](https://www.travis-ci.org/maximkir/rest-easy-async.svg?branch=master)](https://www.travis-ci.org/maximkir/rest-easy-async)
 An example of JAX-RS (RESTEasy) with asynchronous HTTP request processing
 
 
