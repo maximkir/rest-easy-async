@@ -1,0 +1,38 @@
+plugins {
+    id 'java-library'
+    id 'application'
+}
+
+mainClassName = 'rest.easy.async.Server'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+    mavenCentral()
+}
+
+ext.libraryVersions = [
+        undertow :      '2.0.17.Final',
+        resteasyJaxrs : '3.6.3.Final',
+        slf4j :         '1.7.25',
+        logback :       '1.2.3'
+]
+
+dependencies {
+    
+    //Undertow
+    implementation group: 'io.undertow', name: 'undertow-core',     version: "${libraryVersions.undertow}"
+    implementation group: 'io.undertow', name: 'undertow-servlet',  version: "${libraryVersions.undertow}"
+
+    //RestEasy
+    implementation group: 'org.jboss.resteasy', name: 'resteasy-jaxrs',     version: "${libraryVersions.resteasyJaxrs}"
+    implementation group: 'org.jboss.resteasy', name: 'resteasy-undertow',  version: "${libraryVersions.resteasyJaxrs}"
+
+    //Logging
+    implementation  group: 'org.slf4j',         name: 'slf4j-api',          version: "${libraryVersions.slf4j}"
+    implementation  group: 'ch.qos.logback',    name: 'logback-classic',    version: "${libraryVersions.logback}"
+
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+}
